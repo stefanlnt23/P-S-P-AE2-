@@ -9,6 +9,7 @@ def welcome():
     :return: Does not return anything.
     """
     # TODO: Your code here
+    print ("///////////////Solar Record Management System///////////////")
 
 
 def menu():
@@ -21,13 +22,27 @@ def menu():
     The user's response should be read in and returned as an integer corresponding to the selected option.
     For example, 1 for 'Load Data', 2 for 'Process Data' and so on.
 
-    If the user enters a invalid option then a suitable error message should be displayed and the value
+ If the user enters a invalid option then a suitable error message should be displayed and the value
     None should be returned.
 
     :return: None if invalid selection otherwise an integer corresponding to a valid selection
     """
     # TODO: Your code here
+def menu():
+    print (" 1.     Load Data")
+    print (" 2.      Process Data")
+    print (" 3.      Visualise Data")
+    print (" 4.      Save Data")
+    print (" 5.      Exit")
+    user_response = int ( input (" Input option :"))
+    if (user_response <= 0 ) or (user_response >= 5):
+        print("Invalid option!")
+    else:
+        print ("working..../.../")
 
+
+
+menu()
 
 def started(operation):
     """
