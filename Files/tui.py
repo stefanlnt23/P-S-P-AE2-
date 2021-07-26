@@ -11,7 +11,7 @@ def welcome():
     # TODO: Your code here
 
     #- Using "- * 30" to print the number of dashes, ive chosen this way so the code looks more clean and easy to understand.
-print("-" * 30, 'Solar Record Management System', "-" * 30)
+print("\n","-" * 30, 'Solar Record Management System', "-" * 30)
 
 
 
@@ -32,30 +32,30 @@ def menu():
     :return: None if invalid selection otherwise an integer corresponding to a valid selection
     """
     # TODO: Your code here
-
-
-
-
 # defining a function "menu" wit the options
-def menu():
+
+
+
     print (" 1.        Load Data")
     print (" 2.        Process Data")
     print (" 3         Visualise Data")
     print (" 4.        Save Data")
     print (" 5.        Exit")
 
+
 # using python if  statements and exceptions, in this way if the user enters a : "str" or "float"  the except function will  handle the error, also returns none.
     try:
-        user_response = int(input(" Input option :"))
+        user_response = int(input("           Input option :"))
 
         if (user_response <=0) or ( user_response >=6):
             print (" Invalid option!")
+
             return()
         else:
             if user_response == 1 :
                 return user_response
             if user_response == 2 :
-                return user_response
+                return (user_response)
             if user_response == 3 :
                 return  user_response
             if user_response == 4 :
@@ -74,8 +74,8 @@ def menu():
 
 
 
-welcome()
-menu()
+
+
 
 def started(operation):
     """
@@ -90,6 +90,20 @@ def started(operation):
     """
     # TODO: Your code here
 
+    if operation == 1 :
+        operation = " Load Data"
+    elif operation == 2 :
+        operation = "Process Data"
+    elif operation == 3 :
+        operation == "Visualise Data"
+    elif operation == 4 :
+        operation = "Save Data"
+    elif operation == 5 :
+        operation = " Exit"
+    print (f'{operation} has started.')
+# this starts both function "started()" and "menu()"
+started(menu())
+
 
 def completed(operation):
     """
@@ -103,6 +117,8 @@ def completed(operation):
     :return: Does not return anything
     """
     # TODO: Your code here
+
+
 
 
 def error(error_msg):
