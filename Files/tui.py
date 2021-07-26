@@ -9,10 +9,14 @@ def welcome():
     :return: Does not return anything.
     """
     # TODO: Your code here
-    print ("///////////////Solar Record Management System///////////////")
+
+    #- Using "- * 30" to print the number of dashes, ive chosen this way so the code looks more clean and easy to understand.
+print("-" * 30, 'Solar Record Management System', "-" * 30)
+
 
 
 def menu():
+
     """
     Task 2: Display a menu of options and read the user's response.
 
@@ -28,20 +32,49 @@ def menu():
     :return: None if invalid selection otherwise an integer corresponding to a valid selection
     """
     # TODO: Your code here
+
+
+
+
+# defining a function "menu" wit the options
 def menu():
-    print (" 1.     Load Data")
-    print (" 2.      Process Data")
-    print (" 3.      Visualise Data")
-    print (" 4.      Save Data")
-    print (" 5.      Exit")
-    user_response = int ( input (" Input option :"))
-    if (user_response <= 0 ) or (user_response >= 5):
-        print("Invalid option!")
-    else:
-        print ("working..../.../")
+    print (" 1.        Load Data")
+    print (" 2.        Process Data")
+    print (" 3         Visualise Data")
+    print (" 4.        Save Data")
+    print (" 5.        Exit")
+
+# using python if  statements and exceptions, in this way if the user enters a : "str" or "float"  the except function will  handle the error, also returns none.
+    try:
+        user_response = int(input(" Input option :"))
+
+        if (user_response <=0) or ( user_response >=6):
+            print (" Invalid option!")
+            return()
+        else:
+            if user_response == 1 :
+                return user_response
+            if user_response == 2 :
+                return user_response
+            if user_response == 3 :
+                return  user_response
+            if user_response == 4 :
+                return user_response
+            if user_response == 5 :
+                return user_response
+
+
+    except:
+        print ("Only interger numbers allowed!")
+        return()
 
 
 
+
+
+
+
+welcome()
 menu()
 
 def started(operation):
