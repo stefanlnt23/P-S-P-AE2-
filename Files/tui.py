@@ -11,6 +11,9 @@ def welcome():
     # TODO: Your code here
 
     #- Using "- * 30" to print the number of dashes, ive chosen this way so the code looks more clean and easy to understand.
+
+
+
 print("\n","-" * 30, 'Solar Record Management System', "-" * 30)
 
 
@@ -102,7 +105,7 @@ def started(operation):
         operation = " Exit"
     print (f'{operation} has started.')
 # this starts both function "started()" and "menu()"
-started(menu())
+
 
 
 def completed(operation):
@@ -118,6 +121,17 @@ def completed(operation):
     """
     # TODO: Your code here
 
+    if operation == 1:
+        operation = " Load Data"
+    elif operation == 2:
+        operation = "Process Data"
+    elif operation == 3:
+        operation == "Visualise Data"
+    elif operation == 4:
+        operation = "Save Data"
+    elif operation == 5:
+        operation = " Exit"
+    print(f'{operation} has completed.')
 
 
 
