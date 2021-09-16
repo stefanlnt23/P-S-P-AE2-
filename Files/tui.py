@@ -11,11 +11,7 @@ def welcome():
     # TODO: Your code here
 
     #- Using "- * 30" to print the number of dashes, ive chosen this way so the code looks more clean and easy to understand.
-
-
-
-print("\n","-" * 30, 'Solar Record Management System', "-" * 30)
-
+    print("\n","-" * 30, 'Solar Record Management System', "-" * 30)
 
 
 def menu():
@@ -35,16 +31,12 @@ def menu():
     :return: None if invalid selection otherwise an integer corresponding to a valid selection
     """
     # TODO: Your code here
-# defining a function "menu" wit the options
-
-
 
     print (" 1.        Load Data")
     print (" 2.        Process Data")
     print (" 3         Visualise Data")
     print (" 4.        Save Data")
     print (" 5.        Exit")
-
 
 # using python if  statements and exceptions, in this way if the user enters a : "str" or "float"  the except function will  handle the error, also returns none.
     try:
@@ -66,7 +58,7 @@ def menu():
             if user_response == 5 :
                 return user_response
 
-
+#if the user enters anythingh else this will guide the user.
     except:
         print ("Only interger numbers allowed!")
         return()
@@ -147,6 +139,9 @@ def error(error_msg):
     :return: Does not return anything
     """
     # TODO: Your code here
+    print (f'{operation} Error')
+
+
 
 
 def source_data_path():
@@ -161,6 +156,17 @@ def source_data_path():
     :return: None if the file path does not end in 'csv' otherwise return the file path entered by the user
     """
     # TODO: Your code here
+    try:
+        #absolute path of the csv file
+        filepath = input(" please input filepath of csv file : ")
+        with open(filepath, 'r') as csv_file:
+            csv_reader = csv.reader(csv_file)
+            for line in csv_reader:
+                print(line)
+    except:
+        print(".csv file not found")
+
+source_data_path()
 
 
 def process_type():
@@ -180,6 +186,27 @@ def process_type():
     :return: None if an invalid selection made otherwise an integer corresponding to a valid option
     """
     # TODO: Your code here
+    print(" 1.        Retrieve entity")
+    print(" 2.        Retrieve entity details")
+    print(" 3         Categorise entities by type")
+    print(" 4.        Categorise entities by gravity")
+    print(" 5.        Summarise entities by orbit")
+
+    try:
+        user_response = int(input("           Input option :"))
+        if user_response == 1:
+            return user_response
+        if user_response == 2:
+            return user_response
+        if user_response == 3:
+            return user_response
+        if user_response == 4:
+            return user_response
+        if user_response == 5:
+            return user_response
+    except:
+        print("Invalid Option!")
+        return
 
 
 def entity_name():
