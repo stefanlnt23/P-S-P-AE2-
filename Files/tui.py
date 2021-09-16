@@ -219,7 +219,8 @@ def entity_name():
     :return: the name of an entity
     """
     # TODO: Your code here
-
+    entity = input("Please enter the name of the Entity : ")
+    return entity
 
 def entity_details():
     """
