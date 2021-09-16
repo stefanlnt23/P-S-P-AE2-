@@ -166,8 +166,6 @@ def source_data_path():
     except:
         print(".csv file not found")
 
-source_data_path()
-
 
 def process_type():
     """
@@ -340,7 +338,35 @@ def visualise():
     # TODO: Your code here
 
 
+    print(" 1.        Entities by type'")
+    print(" 2.        Entities by gravity")
+    print(" 3         Summary of orbits")
+    print(" 4.        Animate gravities")
+
+    try:
+
+        user_response = int(input("           Input option :"))
+        if user_response == 1:
+            return user_response
+        if user_response == 2:
+            return user_response
+        if user_response == 3:
+            return user_response
+        if user_response == 4:
+            return user_response
+        if user_response != 1 or 2 or 3 or 4:
+            print("Invalid option!")
+
+    except: # if user enters a letter or symbol this will handle the error guiding the user.
+
+        print("Only numbers from 1 to 4 allowed!")
+        return ()
+
+
+
+
 def save():
+
     """
     Task 16: Display a menu of options for how the data should be saved. Return the user's response.
 
@@ -355,3 +381,20 @@ def save():
     :return: None if an invalid selection is made otherwise an integer corresponding to a valid option
     """
     # TODO: Your code here
+
+    print(" 1.        Export as JSON")
+    try:
+        user_response = int(input("           Select how the data should be saved : "))
+        if user_response == 1:
+            return user_response
+
+        if user_response != 1:
+            print("Invalid option")
+            return ()
+
+    except:
+
+        print("Only numbers allowed")
+        return ()
+
+
