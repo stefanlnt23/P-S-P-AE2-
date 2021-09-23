@@ -139,7 +139,7 @@ def error(error_msg):
     :return: Does not return anything
     """
     # TODO: Your code here
-    print (f'{operation} Error')
+    print (f'{error_msg} Error')
 
 
 
@@ -164,9 +164,9 @@ def source_data_path():
             for line in csv_reader:
                 print(line)
     except:
-        print(".csv file not found")
+        error(".CSV Not found")
 
-
+source_data_path()
 def process_type():
     """
     Task 7: Display a menu of options for how the file should be processed. Read in the user's response.
@@ -203,7 +203,7 @@ def process_type():
         if user_response == 5:
             return user_response
     except:
-        print("Invalid Option!")
+        error("Invalid option")
         return
 
 
@@ -256,7 +256,7 @@ def list_entity(entity, cols=[]):
     # TODO: Your code here
     if cols is None:
         cols = []
-    if len(cols) == 0
+    if len(cols) == 0:
         print(entity)
     else:
         display = []
@@ -276,7 +276,7 @@ def list_entities(entities, cols = None):
         list_entity(entity,cols)
 
 
-def list_categories():
+def list_categories(categories: dict):
     """
     Task 12: Display the contents of the dictionary categories.
 
@@ -290,6 +290,12 @@ def list_categories():
     """
     # TODO: Your code here
 
+    for name,entities in categories.items():
+        print(name)
+        list_entities(entities)
+
+
+
 def gravity_range():
     """
     Task 13: Ask the user for the lower and upper limits for gravity and return a tuple containing the limits.
@@ -301,6 +307,13 @@ def gravity_range():
     :return: a tuple with the lower and upper limits
     """
     # TODO: Your code here
+
+    lower = float(input("Please enter the lower limits for the gravity : "))
+    upper = float(input("Please enter the lower limits for the gravity : "))
+
+    return lower,upper
+
+
 
 
 def orbits():
@@ -315,6 +328,11 @@ def orbits():
     :return: a list of entity names
     """
     # TODO: Your code here
+    #list =input("Pease enter a list of entity names e.g. Jupiter,Earth,Mars : ").split(",")
+    #print (list)
+    return input("Pease enter a list of entity names e.g. Jupiter,Earth,Mars : ").split(",")
+orbits()
+
 
 
 def visualise():
@@ -352,11 +370,11 @@ def visualise():
         if user_response == 4:
             return user_response
         if user_response != 1 or 2 or 3 or 4:
-            print("Invalid option!")
+            error("Invalid option")
 
     except: # if user enters a letter or symbol this will handle the error guiding the user.
 
-        print("Only numbers from 1 to 4 allowed!")
+        error("Invalid option")
         return ()
 
 
@@ -381,7 +399,7 @@ def save():
 
     print(" 1.        Export as JSON")
     try:
-        user_response = int(input("           Select how the data should be saved : "))
+        user_response = int(input("           Select how the data should be saved : ")).strip()
         if user_response == 1:
             return user_response
 
@@ -390,9 +408,8 @@ def save():
             return ()
 
     except:
-
-        print("Only numbers allowed")
+        error("Invalid option")  # calling the function from task 5
         return ()
-
+save()
 
 
