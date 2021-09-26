@@ -47,7 +47,9 @@ def run():
         if inp ==1:
             tui.started("Load Data")
             path = tui.source_data_path()
-run()
+
+            tui.completed("Load Data")
+
         # Task 22: Check if the user selected the option for processing data.  If so, then do the following:
         # - Use the appropriate function in the module tui to display a message to indicate that the data processing
         # operation has started.
@@ -130,7 +132,7 @@ run()
         #       process has started.
         #       - Use your code from earlier to assemble a dictionary containing a list of planets and a list of
         #       non-planets.
-        #       - Use the appropriate function in the module visual to display a pie chart for the number of planets
+        #       - Use the appropriate functi n in the module visual to display a pie chart for the number of planets
         #       and non-planets
         #       - Use the appropriate function in the module tui to indicate that the entity type visualisation
         #       process has completed.
@@ -174,13 +176,23 @@ run()
         # in alphabetical order.
         # TODO: Your code here
 
+        if inp ==4:
+            tui.started("Save Data")
+            tui.completed("Saved Data")
+
         # Task 29: Check if the user selected the option for exiting.  If so, then do the following:
         # break out of the loop
         # TODO: Your code here
+        if inp == 5:
+            break
+
 
         # Task 30: If the user selected an invalid option then use the appropriate function of the module tui to
         # display an error message
         # TODO: Your code here
+
+        tui.error("Invalid Option")
+
 
 
 if __name__ == "__main__":

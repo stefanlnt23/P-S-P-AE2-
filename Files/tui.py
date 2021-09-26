@@ -1,3 +1,6 @@
+import csv
+
+
 def welcome():
     """
     Task 1: Display a welcome message.
@@ -166,7 +169,7 @@ def source_data_path():
     except:
         error(".CSV Not found")
 
-source_data_path()
+
 def process_type():
     """
     Task 7: Display a menu of options for how the file should be processed. Read in the user's response.
@@ -331,7 +334,6 @@ def orbits():
     #list =input("Pease enter a list of entity names e.g. Jupiter,Earth,Mars : ").split(",")
     #print (list)
     return input("Pease enter a list of entity names e.g. Jupiter,Earth,Mars : ").split(",")
-orbits()
 
 
 
@@ -410,6 +412,6 @@ def save():
     except:
         error("Invalid option")  # calling the function from task 5
         return ()
-save()
+
 
 
